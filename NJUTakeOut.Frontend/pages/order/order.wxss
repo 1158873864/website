@@ -1,0 +1,18 @@
+/* pages/customer/order/order.wxss */
+.confirm_button {
+  background-color: #ec6137;
+  color: white;
+  width: 80%;
+  border-radius: 20px;
+  margin-top: 5%;
+}
+
+.back_button {
+  color: #ec6137;
+  border: #ec6137 1px solid;
+  background-color: white;
+  width: 80%;
+  border-radius: 20px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}

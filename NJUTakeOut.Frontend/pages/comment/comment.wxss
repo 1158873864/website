@@ -1,0 +1,23 @@
+.comment_container {
+  margin: 3%;
+  border: #ec6137 1px solid;
+  border-radius: 5px;
+}
+
+.fixed_title {
+  width: 90%;
+  padding: 2%;
+  margin: auto;
+  margin-bottom: 20rpx;
+  margin-top: 20rpx;
+  text-align: center;
+  font-size: 19px;
+  color: white;
+  background-color: #ec6137;
+  border-radius: 20px;
+}
+
+.avatar_container {
+  border-radius: 50px;
+
+}

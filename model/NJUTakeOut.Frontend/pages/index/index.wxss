@@ -1,0 +1,169 @@
+.kind-list__item{padding:10px;background-color:white;}.kind-list__img{width:60px;height:60px;}/*左侧栏主盒子*/  
+.nav_left{  
+  /*设置行内块级元素（没使用定位）*/  
+  display: inline-block;  
+  width: 25%;  
+  height: 100%;  
+  /*主盒子设置背景色为灰色*/  
+  background: #f5f5f5;  
+  text-align: center;  
+}  
+/*左侧栏list的item*/  
+.nav_left .nav_left_items{  
+  /*每个高30px*/  
+  height: 30px;  
+  /*垂直居中*/  
+  line-height: 30px;  
+  /*再设上下padding增加高度，总高42px*/  
+  padding: 6px 0;  
+  /*只设下边线*/  
+  border-bottom: 1px solid #dedede;  
+  /*文字14px*/  
+  font-size: 14px;  
+}  
+/*左侧栏list的item被选中时*/  
+.nav_left .nav_left_items.active{  
+  /*背景色变成白色*/  
+  background: #fff;  
+}  
+/*右侧栏主盒子*/  
+.nav_right{  
+  /*右侧盒子使用了绝对定位*/  
+  position: absolute;  
+  top: 0;  
+  right: 0;  
+  flex: 1;  
+  /*宽度75%，高度占满，并使用百分比布局*/  
+  width: 75%;  
+  height: 100%; 
+  margin-top: 18.5%;
+  border-left: 0.1px;
+  box-sizing: border-box;  
+  background: #fff;  
+} 
+.bottomBtn{
+  align-items:center;
+  display:flex;
+  position: fixed;
+  width:100%;
+  bottom:0;
+  font-size: 20px;
+  background: #f5f5f5;
+}
+.swiper_container {
+  background-color: #FFFFEF;
+  height: 50rpx;
+}
+
+.swiper_item {
+  font-size: 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@font-face {
+  font-family: 'iconfont';  /* project id 673801 */
+  src: url('//at.alicdn.com/t/font_673801_pj2tabypyg.eot');
+  src: url('//at.alicdn.com/t/font_673801_pj2tabypyg.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_673801_pj2tabypyg.woff') format('woff'),
+  url('//at.alicdn.com/t/font_673801_pj2tabypyg.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_673801_pj2tabypyg.svg#iconfont') format('svg');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 30px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.iconfont-small {
+  font-family: "iconfont" !important;
+  font-size: 20px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-add:before {
+  content: "\e985";
+}
+
+.icon-add:after {
+  content: "\00a0 ";
+}
+
+.icon-minus:before {
+  content: "\e9b0";
+}
+
+.icon-minus:after {
+  content: "\00a0 ";
+}
+
+.icon-cart:before {
+  content: "\e9c8";
+}
+
+.icon-cart:after {
+  content: "\00a0 ";
+}
+
+.icon-horn:before {
+  content: "\e951";
+}
+
+.icon-horn:after {
+  content: "\00a0 ";
+}
+
+.icon-manage:before {
+  content: "\e988";
+}
+
+.icon-manage:after {
+  content: "\00a0 ";
+}
+
+/*主容器*/
+.stepper {
+	width: 80px;
+	height: 26px;
+	/*给主容器设一个边框*/
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin:0 auto;
+}
+ 
+/*加号和减号*/
+.stepper text {
+	width: 19px;
+	line-height: 26px;
+	text-align: center;
+	float: left;
+}
+ 
+/*数值*/
+.stepper input {
+	width: 40px;
+	height: 26px;
+	float: left;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 12px;
+	/*给中间的input设置左右边框即可*/
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+ 
+/*普通样式*/
+.stepper .normal{
+	color: black;
+}
+ 
+/*禁用样式*/
+.stepper .disabled{
+	color: #ccc;
+}

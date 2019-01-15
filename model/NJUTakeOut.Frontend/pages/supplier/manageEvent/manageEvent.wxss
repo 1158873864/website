@@ -1,0 +1,9 @@
+.bottomBtn{
+  position: fixed;
+  width:100%;
+  bottom:0;
+}
+
+.bigMinus{
+  font-size: 30px;
+}

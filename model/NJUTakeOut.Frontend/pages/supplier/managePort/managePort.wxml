@@ -1,0 +1,25 @@
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title" style="text-align:center">档口列表</view>
+  </view>
+  <view class="page__bd">
+    <block wx:for="{{ports}}" wx:for-item="item" wx:key="id">
+      <view class="weui-cell weui-cell_access">
+        <view class="weui-cell__bd">{{item.portName}}</view>
+        <view class="weui-cell__ft">
+          <view id="{{item.id}}" class="bigMinus" bindtap="deletePort">-</view>
+        </view>
+      </view>
+    </block>
+    <view class="bottomBtn">
+      <button type="primary" bindtap="addPort">增加档口</button>
+    </view>
+    <modal hidden="{{dialogIsHiden}}" title="增加档口" confirm-text="提交" cancel-text="取消" bindcancel="closeDialog" bindconfirm="confirmAddDialog">
+      <view class="weui-cells">
+        <view>
+          <input bindinput="bindPortNameInput" placeholder="档口名"></input>
+        </view>
+      </view>
+    </modal>
+  </view>
+</view>

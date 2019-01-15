@@ -1,0 +1,81 @@
+<view class="page">
+  <view class="fixed_title">
+    我的订单
+  </view>
+  <view class="page__bd">
+    <block wx:for="{{orders}}" wx:for-item="item" wx:key="id">
+      <view class="weui-form-preview" style="margin-bottom:20px;">
+        <view class="weui-form-preview__hd">
+          <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">订单金额</view>
+            <view class="weui-form-preview__value_in-hd">¥{{item.total}}</view>
+          </view>
+        </view>
+        <view class="weui-form-preview__bd">
+          <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">取餐时间</view>
+            <view class="weui-form-preview__value">{{item.date}}</view>
+          </view>
+          <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">取餐地点</view>
+            <view class="weui-form-preview__value">{{item.address}}</view>
+          </view>
+          <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">联系电话</view>
+            <view class="weui-form-preview__value">{{item.phone}}</view>
+          </view>
+          <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">备注</view>
+            <view class="weui-form-preview__value">{{item.comment}}</view>
+          </view>
+          <block wx:for="{{item.foods}}" wx:for-item="food">
+            <view class="weui-form-preview__label">{{food.portName}} {{food.name}} {{food.specialChoice}}</view>
+            <view class="weui-form-preview__value">¥{{food.price}}</view>
+          </block>
+        </view>
+        <view class="weui-form-preview__ft">
+          <block wx:if="{{item.orderState=='REQUESTING'}}">
+            <navigator id="{{item.id}}" url="" class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active">等待商户接单</navigator>
+          </block>
+          <block wx:if="{{item.orderState=='WAITING_FOR_PAYING'}}">
+            <navigator id="{{item.id}}" url="" bindtap="deleteOrder" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">取消订单</navigator>
+            <navigator id="{{item.id}}" bindtap="payOrder" url="" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">支付订单</navigator>
+          </block>
+          <block wx:if="{{item.orderState=='REJECTED'}}">
+            <navigator id="{{item.id}}" url="" class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active">商户拒绝接单</navigator>
+            <navigator id="{{item.id}}" bindtap='deleteOrder' url="" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">删除订单</navigator>
+          </block>
+          <block wx:if="{{item.orderState=='ARRIVED'||item.orderState=='VALID'}}">
+            <navigator id="{{item.id}}" url="" bindtap='confirmOrder' class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">确认送达</navigator>
+          </block>
+          <block wx:if="{{item.orderState=='CONFIRMED'}}">
+            <navigator id="{{item.id}}" url="" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" bindtap='comment'>订单已送达(去评论)</navigator>
+            <navigator id="{{item.id}}" bindtap='deleteOrder' url="" class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active">删除订单</navigator>
+          </block>
+          <block wx:if="{{item.orderState=='COMMENTED'}}">
+            <navigator id="{{item.id}}" url="" class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active">已评论</navigator>
+            <navigator id="{{item.id}}" bindtap='deleteOrder' url="" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">删除订单</navigator>
+          </block>
+        </view>
+      </view>
+    </block>
+  </view>
+  <modal hidden="{{dialogIsHiden}}" title="评论" cancel-text="取消" bindcancel="closeDialog" bindconfirm="confirmDialog">
+    <view class="section">
+      <view class="weui-panel weui-panel_access">
+        <view class="weui-panel__hd">选择您觉得好吃的菜品</view>
+        <view class="weui-panel__bd">
+          <block wx:for="{{foodList}}" wx:for-item="item" wx:key="id">
+            <button id="{{item.id}}" bindtap="clickDialog" style="margin:10px;" wx:if="{{item.selected}}" size="mini" type="primary">{{item.value}}</button>
+            <button id="{{item.id}}" bindtap="clickDialog" style="margin:10px;" wx:else size="mini" type="default">{{item.value}}</button>
+          </block>
+          <view class="weui-panel__ft">
+            <view class="section">
+              <textarea bindblur="bindTextAreaBlur" style="margin:4%;" bindinput="onCommentInput" auto-height placeholder="输入您的评论" />
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </modal>
+</view>

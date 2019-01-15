@@ -1,0 +1,14 @@
+/* pages/supplier/home/home.wxss */
+.primary_button {
+  background-color: #ec6137;
+  color: white;
+  width: 80%;
+  border-radius: 20px;
+}
+.plain_button {
+  border: #ec6137 1px solid;
+  color: #ec6137;
+  background-color: white;
+  width: 80%;
+  border-radius: 20px;
+}

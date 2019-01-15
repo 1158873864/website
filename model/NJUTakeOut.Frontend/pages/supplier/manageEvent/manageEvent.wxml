@@ -1,0 +1,60 @@
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title" style="text-align:center">活动列表</view>
+  </view>
+  <view class="page__bd">
+    <block wx:for="{{events}}" wx:for-item="item" wx:key="id">
+      <view class="weui-cell weui-cell_access">
+        <view class="weui-cell__bd">{{item.content}}</view>
+        <view class="weui-cell__ft">
+          <view id="{{item.id}}" class="bigMinus" bindtap="deleteEvent">-</view>
+        </view>
+      </view>
+    </block>
+    <view class="bottomBtn">
+      <button type="primary" bindtap="addEvent">增加活动</button>
+    </view>
+    <modal hidden="{{dialogIsHiden}}" title="增加活动" confirm-text="提交" cancel-text="取消" bindcancel="closeDialog" bindconfirm="confirmAddDialog">
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-navbar">
+          <block wx:for="{{tabs}}" wx:key="*this">
+            <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+              <view class="weui-navbar__title">{{item}}</view>
+            </view>
+          </block>
+          <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+        </view>
+      </view>
+      <view class="weui-cells">
+        <view class="page__hd" />
+        <view wx:if="{{activeIndex==0}}">
+          <input bindinput="bindFirstOrderMinusPrice" placeholder="优惠金额"></input>
+          <input bindinput="bindFirstOrderDescription" placeholder="描述"></input>
+        </view>
+        <view wx:elif="{{activeIndex==1}}">
+          <input bindinput="bindFullSubtractionTargetPrice" placeholder="目标金额"></input>
+          <input bindinput="bindFullSubtractionMinusPrice" placeholder="优惠金额"></input>
+          <input bindinput="bindFullSubtractionDescription" placeholder="描述"></input>
+        </view>
+        <view wx:elif="{{activeIndex==2}}">
+          <checkbox-group bindchange="checkboxChange">
+            <label class="checkbox" wx:for="{{commodities}}">
+              <checkbox value="{{item.value}}" id="{{item.id}}" checked="{{item.checked}}" />{{item.value}}
+            </label>
+          </checkbox-group>
+          <input bindinput="bindItemSubtractionMinusPrice" placeholder="优惠金额"></input>
+          <input bindinput="bindItemSubtractionDescription" placeholder="描述"></input>
+        </view>
+        <view wx:elif="{{activeIndex==3}}">
+          <radio-group bindchange="radioboxChange">
+            <label class="checkbox" wx:for="{{commodities}}">
+              <radio value="{{item.value}}" id="{{item.id}}" checked="{{item.checked}}" >{{item.value}}</radio>
+            </label>
+          </radio-group>
+          <input bindinput="bindItemSubtractionOnceMinusPrice" placeholder="优惠金额"></input>
+          <input bindinput="bindItemSubtractionOnceDescription" placeholder="描述"></input>
+        </view>
+      </view>
+    </modal>
+  </view>
+</view>

@@ -1,0 +1,39 @@
+.swiper {
+  height: 400rpx;
+  width: 100%;
+}
+.swiper image {
+  height: 100%;
+  width: 100%;
+}
+@font-face {
+  font-family: 'iconfont';  /* project id 673801 */
+  src: url('//at.alicdn.com/t/font_673801_pj2tabypyg.eot');
+  src: url('//at.alicdn.com/t/font_673801_pj2tabypyg.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_673801_pj2tabypyg.woff') format('woff'),
+  url('//at.alicdn.com/t/font_673801_pj2tabypyg.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_673801_pj2tabypyg.svg#iconfont') format('svg');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 30px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.iconfont-small {
+  font-family: "iconfont" !important;
+  font-size: 20px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-good:before {
+  content: "\e866";
+}
+
+.icon-good:after {
+  content: "\00a0 ";
+}

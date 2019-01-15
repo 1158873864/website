@@ -1,0 +1,20 @@
+<view class="weui-panel weui-panel_access " >
+<view class="fixed_title">
+  评论区
+</view>
+<view class="weui-panel__bd">
+    <view class="weui-panel weui-panel_access" style='margin:3%;border-radius:20px'>
+      <block wx:for="{{comments}}" wx:for-item="item">
+        <navigator url="" class="weui-media-box weui-media-box_appmsg comment_container" hover-class="weui-cell_active">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb avatar_container" src="{{item.avatarUrl}}" />
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__desc" style='margin-bottom:20rpx;'>{{item.date}}</view>
+            <text>{{item.content}}</text>
+          </view>
+        </navigator>
+      </block>
+    </view>
+  </view>
+</view>

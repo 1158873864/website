@@ -1,0 +1,59 @@
+<view class="page">
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+    <block wx:for="{{pictures}}" wx:for-index="index">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" mode="aspectFill" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="page__bd">
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__hd">
+        <text style='display:inline-block'>
+      {{name}}
+      </text>
+        <text style='margin-left:20px;display:inline-block'>
+      {{amount}}人喜欢
+      </text>
+        <view class="iconfont-small icon-good" style='margin-left:5px;color:red;display:inline-block' />
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">档口名</view>
+        </view>
+        <view class="weui-cell__bd">
+          <text class="weui-input">{{portName}}</text>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">单价</view>
+        </view>
+        <view class="weui-cell__bd">
+          <text class="weui-input">￥{{price}}</text>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">简介</view>
+        </view>
+        <view class="weui-cell__bd">
+          <text class="weui-input">{{description}}</text>
+        </view>
+      </view>
+      <block hidden="{{!hasSpecialChoice}}">
+        <block wx:for="{{specialChoices}}" wx:for-item="item" wx:key="index">
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">特殊口味{{item.index}}</view>
+            </view>
+            <view class="weui-cell__bd">
+              <text class="weui-input">{{item.value}}</text>
+            </view>
+          </view>
+        </block>
+      </block>
+    </view>
+    <button bindtap="backToMenu" plain="true" type="primary">返回菜单</button>
+  </view>
+</view>

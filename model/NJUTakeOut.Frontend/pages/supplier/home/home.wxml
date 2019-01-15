@@ -1,0 +1,22 @@
+<view class="page" style="background:#FFFFF0;">
+  <view class="page__hd">
+    <view class="page__title" style="text-align:center">选择功能</view>
+  </view>
+  <view class="page__hd">
+  </view>
+  <view class="page__bd page__bd_spacing">
+    <button type="primary" bindtap="toChooseFood">开始此次销售</button>
+    <view class="page__bd page__bd_spacing"></view>
+    <button type="primary" plain="true" bindtap="toManageFood">管理食品</button>
+    <view class="page__bd page__bd_spacing"></view>
+    <button type="primary" plain="true" bindtap="toManageEvent">管理活动</button>
+    <view class="page__bd page__bd_spacing"></view>
+    <button type="primary" plain="true" bindtap="toManagePort">管理档口</button>
+  </view>
+  <view class="page__hd">
+  </view>
+  <view class="page__hd">
+  </view>
+  <view class="page__hd">
+  </view>
+</view>

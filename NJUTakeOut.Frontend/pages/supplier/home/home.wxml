@@ -1,0 +1,23 @@
+<view class="page" style="background:#FFFAEA;">
+  <view class="page__hd">
+  </view>
+  <view class="page__bd page__bd_spacing">
+    <button bindtap="toChooseFood" class="primary_button">开始此次销售</button>
+    <view class="page__bd page__bd_spacing"></view>
+    <button bindtap="toReceiveOrder" class="primary_button">所有订单</button>
+    <view class="page__bd page__bd_spacing"></view>
+    <button bindtap="toManageFood" class='plain_button'>管理食品</button>
+    <view class="page__bd page__bd_spacing"></view>
+    <button bindtap="toManageEvent" class='plain_button'>管理活动</button>
+    <view class="page__bd page__bd_spacing"></view>
+    <button bindtap="toManagePort" class='plain_button'>管理档口</button>
+    <view class="page__bd page__bd_spacing"></view>
+    <button bindtap="toFoodPage" class='plain_button'>进入点餐界面</button>
+  </view>
+  <view class="page__hd">
+  </view>
+  <view class="page__hd">
+  </view>
+  <view class="page__hd">
+  </view>
+</view>

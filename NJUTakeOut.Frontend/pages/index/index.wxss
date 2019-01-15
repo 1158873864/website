@@ -1,0 +1,229 @@
+.search_container{
+  background-color: #ec6137;
+  padding: 5px;
+  /* border-radius: 5px; */
+}
+.cancel_text {
+  color:white;
+  font-size: 14px;
+}
+.kind-list__item{
+  /* 右侧食品栏 */
+  padding:10px;
+  border-radius: 5px;
+  margin: 3%;}
+
+.kind-list__img{
+  width:90px;
+  height:90px;}  
+
+/*左侧栏主盒子*/
+.nav_left{   
+  position: absolute;
+  top: 0;  
+  right: 1;  
+  flex: 1; 
+  margin-top: 18%;
+  display: inline-block;  
+  width: 25%;  
+  background: white;  
+  text-align: center;  
+  color: black;
+  border-right: #ec6137 1px solid;
+}  
+/*左侧栏list的item*/  
+.nav_left .nav_left_items{  
+  /*每个高30px*/  
+  height: 30px;  
+  /*垂直居中*/  
+  line-height: 30px;  
+  /*再设上下padding增加高度，总高42px*/  
+  padding: 6px 0;  
+  /*只设下边线*/  
+  border-bottom: 1px solid #dedede;  
+  /*文字14px*/  
+  font-size: 14px;  
+}  
+/*左侧栏list的item被选中时*/  
+.nav_left .nav_left_items.active{  
+  /*背景色变成白色*/  
+  background: #fff;  
+}  
+/*右侧栏主盒子*/  
+.nav_right{  
+  /*右侧盒子使用了绝对定位*/  
+  position: absolute;  
+  top: 0;  
+  right: 0;  
+  flex: 1;  
+  /*宽度75%，高度占满，并使用百分比布局*/  
+  width: 75%;  
+  margin-top: 18%;
+  box-sizing: border-box;  
+  background-color: white;
+  border-left: #ec6137 1px solid; 
+  padding: 2%;
+} 
+.port_text {
+  color: #ec6137;
+  padding-top: 2%;
+  border-top: #ec6137 1px solid;
+  font-size: 14px;
+}
+
+.swiper_container {
+  background-color: #FFFFEF;
+  height: 50rpx;
+}
+
+.swiper_item {
+  font-size: 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@font-face {
+  font-family: 'iconfont';  /* project id 673801 */
+  src: url('//at.alicdn.com/t/font_673801_pj2tabypyg.eot');
+  src: url('//at.alicdn.com/t/font_673801_pj2tabypyg.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_673801_pj2tabypyg.woff') format('woff'),
+  url('//at.alicdn.com/t/font_673801_pj2tabypyg.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_673801_pj2tabypyg.svg#iconfont') format('svg');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 30px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.iconfont-small {
+  font-family: "iconfont" !important;
+  font-size: 20px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-add:before {
+  content: "\e985";
+}
+
+.icon-add:after {
+  content: "\00a0 ";
+}
+
+.icon-minus:before {
+  content: "\e9b0";
+}
+
+.icon-minus:after {
+  content: "\00a0 ";
+}
+
+.icon-cart:before {
+  content: "\e9c8";
+}
+
+.icon-cart:after {
+  content: "\00a0 ";
+}
+
+.icon-horn:before {
+  content: "\e951";
+}
+
+.icon-horn:after {
+  content: "\00a0 ";
+}
+
+.icon-manage:before {
+  content: "\e988";
+}
+
+.icon-manage:after {
+  content: "\00a0 ";
+}
+
+/*主容器*/
+.stepper {
+	width: 86px;
+	height: 24px;
+	/*给主容器设一个边框*/
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+ 
+/*加号和减号*/
+.stepper text {
+	width: 22px;
+	line-height: 24px;
+	text-align: center;
+	float: left;
+}
+ 
+/*数值*/
+.stepper input {
+	width: 40px;
+  min-height: 20px;
+	height: 24px;
+	float: left;
+	text-align: center;
+	font-size: 12px;
+	/*给中间的input设置左右边框即可*/
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+ 
+/*普通样式*/
+.stepper .normal{
+	color: black;
+}
+ 
+/*禁用样式*/
+.stepper .disabled{
+	color: #ccc;
+}
+.bottomBtn{
+  align-items:center;
+  display:flex;
+  position: fixed;
+  width:96%;
+  bottom:0;
+  font-size: 20px;
+  background: white;
+  border-radius: 50px;
+  padding: 1%;
+  margin: 1%;
+  border: #ec6137 1px solid;
+}
+.confirm_button {
+  width:30%;
+  float:right;
+  border-radius:20px;
+  font-size: 15px;
+  background-color:#ec6137;
+  color: white;
+}
+.cart_delete_button {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #ec6137;
+  color: white;
+  font-size: 12px;
+  padding: 0px;
+}
+
+.login_input {
+  border-bottom:  #c9c7c6c5 1px solid;
+  margin: 0rpx 20rpx 30rpx 20rpx;
+}
+
+.login_prompt {
+  font-size: 13px;
+  margin-left: 20rpx;
+}

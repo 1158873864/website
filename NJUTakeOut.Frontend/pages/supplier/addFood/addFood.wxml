@@ -1,0 +1,81 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__hd">菜品图片</view>
+      <view class="weui-panel__bd">
+        <view class="weui-cell">
+          <image style="margin:30px;" wx:if="{{imageUrl}}" src="{{imageUrl}}" mode="scaleToFill"></image>
+        </view>
+        <button style="margin:20px;" type="default" bindtap="addImage">点击添加图片</button>
+      </view>
+    </view>
+
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__hd">菜品信息</view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">档口名</view>
+        </view>
+        <view class="weui-cell__bd" style='height: 100%;'>
+          <radio-group  bindchange="portRadioChange" style='margin-top:20rpx'>
+            <radio wx:for="{{portList}}" style='margin:5rpx' value='{{item.portName}}'>{{item.portName}}</radio>
+          </radio-group>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input" style='height: 100rpx;'>
+        <view class="weui-cell__hd">
+          <view class="weui-label">名称</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" placeholder="请输入菜品名称" bindinput="onFoodNameInput" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input" style='height: 100rpx;'>
+        <view class="weui-cell__hd">
+          <view class="weui-label">单价</view>
+        </view>
+        <view class="weui-cell__bd" style='height: 100rpx;'>
+          <input type="digit" class="weui-input" placeholder="请输入菜品单价" bindinput="onFoodPriceInput" style='margin-top:18rpx'/>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input" style='height: 100rpx;'> 
+        <view class="weui-cell__hd">
+          <view class="weui-label">简介</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" placeholder="请输入菜品简介" bindinput="onFoodDescriptionInput" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input" style='height:100rpx'>
+        <checkbox-group bindchange="checkboxChange">
+          <label class="weui-cell weui-check__label">
+            <checkbox class="weui-check" checked="{{hasSpecialChoice}}" />是否有特殊口味供选择
+
+            <view class="weui-cell__hd weui-check__hd_in-checkbox">
+              <icon class="weui-icon-checkbox_circle" type="circle" size="23" wx:if="{{!hasSpecialChoice}}"></icon>
+              <icon class="weui-icon-checkbox_success" type="success" size="23" wx:if="{{hasSpecialChoice}}"></icon>
+            </view>
+          </label>
+        </checkbox-group>
+        <view hidden="{{!hasSpecialChoice}}">
+          <button style="margin:10px;" size="mini" bindtap="abstractChoice">-</button>
+          <button style="margin:10px;" size="mini" bindtap="addChoice">+</button>
+        </view>
+      </view>
+      <block wx:for="{{specialChoices}}" wx:for-item="item" wx:key="index">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">属性{{item.index}}</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" placeholder="请输入属性" bindinput="onSpecialChoiceInput" id="{{item.index}}" />
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="page__bd page__bd_spacing"></view>
+    <button bindtap="confirmAdd" class="primary_button" style='margin-bottom:30rpx'>确定并继续添加</button>
+    <button bindtap="backToManageFood" class="plain_button">返回菜品管理</button>
+    
+  </view>
+</view>

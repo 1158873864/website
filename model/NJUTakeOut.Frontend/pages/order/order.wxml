@@ -1,0 +1,80 @@
+<!--pages/customer/order/order.wxml-->
+<view class="page">
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-panel__hd">取餐信息</view>
+        <view class="weui-panel__bd">
+          <view class="weui-cell">
+            <view class="weui-cell__bd">顾客信息</view>
+            <button wx:if="{{userInfo.length==0}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" size="mini">点击以获取用户信息</button>
+            <view class="weui-cell__ft">
+              {{userInfo}}
+            </view>
+          </view>
+          <view class="weui-cell">
+            <view class="weui-cell__bd">联系电话</view>
+            <button open-type="getPhoneNumber" wx:if="{{phone==0}}" bindgetphonenumber="bingGetPhoneNumber" size="mini">点击以获取绑定手机号</button>
+            <input wx:else bindinput="onPhoneInput" class="weui-cell__ft" value="{{phone}}"/>
+          </view>
+          <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__bd">取餐时间</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access">
+              <picker mode="time" value="{{time}}" start="{{nowTime}}" end="22:00" bindchange="chooseTime">
+                {{hour}}:{{minute}}
+              </picker>
+            </view>
+          </view>
+          <view bindtap="chooseAddress" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__bd">取餐地点</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access">
+              {{address}}
+            </view>
+          </view>
+        </view>
+        <view class="weui-cell">
+          <view class="weui-cell__bd">详细地点</view>
+          <view class="weui-cell__ft">
+            <input bindinput="onAddressDetailInput" type="text" placeholder="请填写如门牌号等" />
+          </view>
+        </view>
+        <view class="weui-cell">
+          <view class="weui-cell__bd">备注</view>
+          <view class="weui-cell__ft">
+            <input bindinput="onCommentInput" type="text" placeholder="点击以填写备注信息" />
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="weui-panel weui-panel_access">
+    <view class="weui-panel__hd">价格信息</view>
+    <view class="weui-panel__bd">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">商品总价</view>
+        <view class="weui-cell__ft">￥{{commodityTotalPrice}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">订餐费</view>
+        <view class="weui-cell__ft">￥{{orderPrice}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">活动折扣</view>
+        <view class="weui-cell__ft">￥-{{eventDiscount}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">总计</view>
+        <view class="weui-cell__ft">￥{{commodityTotalPrice+orderPrice-eventDiscount}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="weui-panel weui-panel_access">
+    <view class="page__bd">
+    </view>
+    <view class="page__bd page__bd_spacing">
+      <button bindtap="submitOrder" type="primary">提交订单</button>
+      <view class="page__bd page__bd_spacing"></view>
+      <button bindtap="backToCart" type="primary" plain="true">返回菜单</button>
+    </view>
+  </view>
+</view>

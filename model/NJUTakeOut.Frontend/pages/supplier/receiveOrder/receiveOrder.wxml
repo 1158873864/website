@@ -1,0 +1,63 @@
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title" style="text-align:center">正在接单……（下拉刷新）</view>
+  </view>
+  <view class="page__bd">
+    <block wx:for="{{orders}}" wx:for-item="item" wx:key="id">
+      <view class="weui-form-preview" style="margin-bottom:20px;">
+        <view class="weui-form-preview__hd">
+          <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">订单金额</view>
+            <view class="weui-form-preview__value_in-hd">¥{{item.total}}</view>
+          </view>
+        </view>
+        <view class="weui-form-preview__bd">
+          <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">取餐时间</view>
+            <view class="weui-form-preview__value">{{item.date}}</view>
+          </view>
+          <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">取餐地点</view>
+            <view class="weui-form-preview__value">{{item.address}}</view>
+          </view>
+          <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">联系电话</view>
+            <view class="weui-form-preview__value">{{item.phone}}</view>
+          </view>
+          <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">备注</view>
+            <view class="weui-form-preview__value">{{item.comment}}</view>
+          </view>
+          <block wx:for="{{item.foods}}" wx:for-item="food">
+            <view class="weui-form-preview__label">{{food.portName}} {{food.name}} {{food.specialChoice}}</view>
+            <view class="weui-form-preview__value">¥{{food.price}}</view>
+          </block>
+        </view>
+        <view class="weui-form-preview__ft">
+          <block wx:if="{{item.orderState=='REQUESTING'}}">
+            <navigator id="{{item.id}}" bindtap="acceptOrder" url="" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">确认接单</navigator>
+            <navigator id="{{item.id}}" bindtap="rejectOrder" url="" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">拒绝接单</navigator>
+          </block>
+          <block wx:if="{{item.orderState=='WAITING_FOR_PAYING'}}">
+            <navigator id="{{item.id}}" url="" class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active">等待支付</navigator>
+          </block>
+          <block wx:elif="{{item.orderState=='REJECTED'}}">
+            <navigator id="{{item.id}}" url="" class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active">已拒绝接单</navigator>
+          </block>
+          <block wx:elif="{{item.orderState=='ARRIVED'||item.orderState=='CONFIRMED'}}">
+            <navigator id="{{item.id}}" url="" class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active">已确认送达</navigator>
+          </block>
+          <block wx:elif="{{item.orderState=='VALID'}}">
+            <navigator id="{{item.id}}" bindtap="confirmOrderArrive" url="" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">确认送达</navigator>
+          </block>
+          <block wx:elif="{{item.orderState=='DELETE'}}">
+            <navigator id="{{item.id}}" url="" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">订单已删除</navigator>
+          </block>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="bottomBtn">
+    <button bindtap="stopReceivingOrder" type="primary">停止接单</button>
+  </view>
+</view>

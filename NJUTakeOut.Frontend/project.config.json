@@ -1,0 +1,97 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.1.3",
+	"appid": "wx8b0d0433876f8f70",
+	"projectname": "NJUTakeOut",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 8,
+			"list": [
+				{
+					"id": 0,
+					"name": "app",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "order",
+					"pathName": "pages/order/order",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "orderPreview",
+					"pathName": "pages/orderPreview/orderPreview",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "addFood",
+					"pathName": "pages/supplier/addFood/addFood",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "editFood",
+					"pathName": "pages/supplier/editFood/editFood",
+					"query": "15"
+				},
+				{
+					"id": -1,
+					"name": "home",
+					"pathName": "pages/supplier/home/home",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "receiveOrder",
+					"pathName": "pages/supplier/receiveOrder/receiveOrder",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "manageEvent",
+					"pathName": "pages/supplier/manageEvent/manageEvent",
+					"query": ""
+				},
+				{
+					"id": 8,
+					"name": "food",
+					"pathName": "pages/food/food",
+					"query": "id=4"
+				},
+				{
+					"id": -1,
+					"name": "comment",
+					"pathName": "pages/comment/comment",
+					"query": ""
+				}
+			]
+		}
+	}
+}

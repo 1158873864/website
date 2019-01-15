@@ -1,0 +1,14 @@
+.bottomBtn {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  font-size: 20px;
+}
+
+.bottomBtn {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  font-size: 20px;
+  background: #f5f5f5;
+}

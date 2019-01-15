@@ -1,0 +1,31 @@
+.bottomBtn {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  font-size: 20px;
+}
+
+.bottomBtn {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  font-size: 20px;
+  background: #f5f5f5;
+}
+
+.primary_button {
+  background-color: #ec6137;
+  color: white;
+  width: 80%;
+  border-radius: 20px;
+  margin-bottom: 20rpx;
+}
+
+.plain_button {
+  border: #ec6137 1px solid;
+  color: #ec6137;
+  background-color: white;
+  width: 80%;
+  border-radius: 20px;
+  margin-bottom: 20rpx;
+}

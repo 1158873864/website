@@ -1,0 +1,8 @@
+.fixed_title {
+  width: 90%;
+  margin: auto;
+  margin-bottom: 20rpx;
+  margin-top: 20rpx;
+  text-align: center;
+  font-size: 19px;
+}

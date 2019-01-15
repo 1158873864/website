@@ -1,0 +1,56 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/order/order",
+    "pages/orderPreview/orderPreview",
+    "pages/supplier/home/home",
+    "pages/supplier/manageFood/manageFood",
+    "pages/supplier/addFood/addFood",
+    "pages/supplier/editFood/editFood",
+    "pages/supplier/chooseFood/chooseFood",
+    "pages/supplier/receiveOrder/receiveOrder",
+    "pages/supplier/manageEvent/manageEvent",
+    "pages/supplier/managePort/managePort",
+    "pages/food/food",
+    "pages/comment/comment"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "南大仙林外卖",
+    "navigationBarBackgroundColor": "#000000",
+    "backgroundColor": "#f8f8f8"
+  },
+  "tabBar": {
+    "backgroundColor": "#ffffff",
+    "color": "#dddddd",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "pages/images/home.png",
+        "selectedIconPath": "pages/images/home.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/orderPreview/orderPreview",
+        "iconPath": "pages/images/form.png",
+        "selectedIconPath": "pages/images/form.png",
+        "text": "订单"
+      },
+      {
+        "pagePath": "pages/comment/comment",
+        "iconPath": "pages/images/comments.png",
+        "selectedIconPath": "pages/images/comments.png",
+        "text": "评论"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}
